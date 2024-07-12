@@ -21,6 +21,12 @@ jobs:
         with:
           node-version: '16.x'  # Adjust to a supported Node.js version
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Update dependencies
+        run: npm update
+
       - name: Install dependencies
         run: npm install
 
