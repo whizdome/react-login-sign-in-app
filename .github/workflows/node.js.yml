@@ -19,13 +19,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'  # Upgrade to Node.js 18.x or '20.x'
+          node-version: '16.x'  # Adjust to a supported Node.js version
 
-      - name: Update npm
-        run: npm install -g npm@latest  # Install the latest npm version
+      - name: Install compatible npm version
+        run: npm install -g npm@8.19.4  # Use a version compatible with Node.js 16.x
 
-      - name: Update dependencies
-        run: npm update
+      - name: Update npm dependencies
+        run: npm install --save @testing-library/react@latest @testing-library/jest-dom@latest
 
       - name: Install dependencies
         run: npm install
