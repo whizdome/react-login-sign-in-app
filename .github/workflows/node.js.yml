@@ -26,11 +26,11 @@ jobs:
 
       - name: Build
         run: npm run build
-
+        
       - name: Test
         run: npm test -- --coverage
 
-        - name: Upload coverage reports to Codecov
+      - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
         token: ${{ 6778156e-4563-4fd5-a6a9-fa1d98c3f4d0 }}
