@@ -19,10 +19,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'  # Adjust to a supported Node.js version
+          node-version: '18.x'  # Upgrade to Node.js 18.x or '20.x'
 
       - name: Update npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@latest  # Install the latest npm version
 
       - name: Update dependencies
         run: npm update
