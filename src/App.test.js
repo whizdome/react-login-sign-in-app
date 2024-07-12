@@ -1,19 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import { act } from 'react';
 
 test('renders learn react link', () => {
-  // Render the App component wrapped in act
-  act(() => {
-    render(<App />);
+  const { container, debug } = render(<App />);
+  console.log(container.innerHTML); // Log the HTML content for debugging purposes
+  debug(); // Print the current state of the DOM
+  
+  // Use a function matcher for more flexibility
+  const linkElement = screen.getByText((content, element) => {
+    return element.textContent.includes('Learn React');
   });
 
-  // Log the HTML content for debugging purposes
-  console.log(document.body.innerHTML);
-
-  // Search for the link element with the text "learn react"
-  const linkElement = screen.getByText(/learn react/i);
-  
-  // Check if the element is in the document
   expect(linkElement).toBeInTheDocument();
 });
