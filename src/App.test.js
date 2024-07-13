@@ -1,16 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders login text', () => {
+  // Render the App component
   const { container, debug } = render(<App />);
-  console.log(container.innerHTML); // Log the HTML content for debugging purposes
-  // eslint-disable-next-line testing-library/no-debugging-utils
-  debug(); // Print the current state of the DOM
   
-  // Use a function matcher for more flexibility
-  const linkElement = screen.getByText((content, element) => {
-    return element.textContent.includes('Learn React');
-  });
+  // Log the rendered HTML for debugging
+  console.log(container.innerHTML);
+  debug(); // Optional: Print the current state of the DOM
 
-  expect(linkElement).toBeInTheDocument();
+  // Search for the text "Login" in the rendered output
+  const loginElement = screen.getByText(/login/i);
+  
+  // Check if the element is in the document
+  expect(loginElement).toBeInTheDocument();
 });
