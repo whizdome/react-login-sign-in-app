@@ -5,7 +5,7 @@ metadata:
   name: whizapp-service
 spec:
   selector:
-    app: myapp
+    app: whizapp-service
   ports:
     - protocol: TCP
       port: 80
