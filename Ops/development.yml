@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: whizapp
-          image: whizdome/whizapp:latest
+          image: whizdome/whizapp:3
           ports:
             - containerPort: 8080
